@@ -9,14 +9,13 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 
 /**
  * Very simple datasource that reads its data points from a resource file
  * <p>
- * This is required in the exercise, but this should definitely migrate to a real database IMHO
+ * This is required in the exercise, but this should definitely migrate to a real database ;)
  */
 @Component
 public class FileDataSource {

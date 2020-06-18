@@ -16,7 +16,7 @@ class FileDataSourceTest {
 
         // We could test for the exact data values, but this would prevent from any data change...
         // Instead we test the plumbing by checking that the datasource returns at least one point, and that each point
-        // contains and ID and both coordinates :
+        // contains and ID and both coordinates (test will fail if any exception is thrown in the process) :
         assertThat(points).isNotEmpty();
         for (Point point : points) {
             assertThat(point.getId()).isNotBlank();
