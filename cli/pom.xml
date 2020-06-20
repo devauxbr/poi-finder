@@ -16,6 +16,12 @@
             <artifactId>picocli-spring-boot-starter</artifactId>
             <version>${picocli-spring-boot.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>poi-finder-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
     <build>

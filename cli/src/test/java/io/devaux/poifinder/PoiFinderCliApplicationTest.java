@@ -10,6 +10,7 @@ import java.io.PrintStream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class PoiFinderCliApplicationTest {
+
     // Setup inspired from https://stackoverflow.com/questions/1119385
     private ByteArrayOutputStream outContent;
     private ByteArrayOutputStream errContent;
@@ -38,14 +39,18 @@ class PoiFinderCliApplicationTest {
     @Test
     void shouldGetPoiNumber() {
         PoiFinderCliApplication.main(new String[]{"--nbpoi", "{\"min_lat\": 6.5, \"min_lon\": -7}"});
-        assertThat(outContent.toString()).isEqualTo("{\n\"value\": 2 }\n");
+        String result = outContent.toString();
+
         assertThat(errContent.toString()).isEmpty();
+        assertThat(result).isEqualTo("{\"value\":2}\n");
     }
 
     @Test
     void shouldGetDensestZones() {
         PoiFinderCliApplication.main(new String[]{"--densest", "{\"n\": 2}"});
-        assertThat(outContent.toString()).isEqualTo("[{\"min_lat\": -2.5, \"max_lat\": -2, \"min_lon\": 38, \"max_lon\": 38.5}, {\"min_lat\": 6.5, \"max_lat\": 7, \"min_lon\": -7, \"max_lon\": -6.5}]");
+        String result = outContent.toString();
+
         assertThat(errContent.toString()).isEmpty();
+        assertThat(result).isEqualTo("[{\"min_lat\":-2.5,\"min_lon\":38.0,\"max_lat\":-2.0,\"max_lon\":38.5},{\"min_lat\":6.5,\"min_lon\":-7.0,\"max_lat\":7.0,\"max_lon\":-6.5}]\n");
     }
 }
