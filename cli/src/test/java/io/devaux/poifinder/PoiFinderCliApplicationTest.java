@@ -32,7 +32,7 @@ class PoiFinderCliApplicationTest {
     }
 
     /*
-    These tests validate the answers to both questions from the exercise
+    These tests validate the answers to both questions from the CLI exercise
     They are HIGHLY dependent on JSON serialization configuration (line break, tabs, etc.) and will easily break !
      */
 
