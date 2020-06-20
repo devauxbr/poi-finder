@@ -4,8 +4,9 @@ This is a small Java 11 Spring-Boot based project that can compute density, base
 in a CLI or Web mode.
 
 This project was developed following [TDD](https://en.wikipedia.org/wiki/Test-driven_development) (see `git log`) and
-the [Clean Code](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship-ebook/dp/B001GSTOAM) guidelines from
-Robert C. Martin.
+the [Clean Code](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship-ebook/dp/B001GSTOAM) and 
+[Clean Architecture](https://www.amazon.com/Clean-Architecture-Craftsmans-Software-Structure/dp/935286512X) 
+guidelines from Robert C. Martin.
 
 ## Pre-requisites
 
