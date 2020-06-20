@@ -5,7 +5,7 @@ import io.devaux.poifinder.model.ValueHolder;
 import io.devaux.poifinder.model.Zone;
 import io.devaux.poifinder.service.DensestZoneFinder;
 import io.devaux.poifinder.service.ZonePoiFinder;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,16 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 public class PoiFinderController {
 
     private final ZonePoiFinder zonePoiFinder;
     private final DensestZoneFinder densestZoneFinder;
-
-    @Autowired
-    public PoiFinderController(ZonePoiFinder zonePoiFinder, DensestZoneFinder densestZoneFinder) {
-        this.zonePoiFinder = zonePoiFinder;
-        this.densestZoneFinder = densestZoneFinder;
-    }
 
     @GetMapping("/nbpoi")
     public ValueHolder get(

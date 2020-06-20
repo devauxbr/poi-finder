@@ -4,23 +4,17 @@ import io.devaux.poifinder.datasource.FileDataSource;
 import io.devaux.poifinder.model.Point;
 import io.devaux.poifinder.model.ValueHolder;
 import io.devaux.poifinder.model.Zone;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 /**
  * Service that finds the number of Point Of Interests in a certain zone
  */
 @Service
+@RequiredArgsConstructor
 public class ZonePoiFinder {
 
     private final FileDataSource fileDataSource;
-
-    @Autowired
-    public ZonePoiFinder(
-            FileDataSource fileDataSource
-    ) {
-        this.fileDataSource = fileDataSource;
-    }
 
     public ValueHolder findPoiIn(Zone zone) {
         // Note that iterating over the data like this is highly inefficient, ideally this should be pre-indexed in a

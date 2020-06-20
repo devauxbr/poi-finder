@@ -8,7 +8,7 @@ import io.devaux.poifinder.model.Number;
 import io.devaux.poifinder.model.Zone;
 import io.devaux.poifinder.service.DensestZoneFinder;
 import io.devaux.poifinder.service.ZonePoiFinder;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
@@ -26,6 +26,7 @@ public class PoiFinderCliApplication {
 
     @Component
     @Command
+    @RequiredArgsConstructor
     public static class MainCommand extends HelpAwarePicocliCommand {
         @Option(names = {"--nbpoi"}, description = "Calculer le nombre de POIs d'une zone")
         String nbpoi;
@@ -37,12 +38,6 @@ public class PoiFinderCliApplication {
 
         private final ZonePoiFinder zonePoiFinder;
         private final DensestZoneFinder densestZoneFinder;
-
-        @Autowired
-        public MainCommand(ZonePoiFinder zonePoiFinder, DensestZoneFinder densestZoneFinder) {
-            this.zonePoiFinder = zonePoiFinder;
-            this.densestZoneFinder = densestZoneFinder;
-        }
 
         @Override
         public ExitStatus call() {
