@@ -11,5 +11,20 @@
     <artifactId>poi-finder-cli</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>com.kakawait</groupId>
+            <artifactId>picocli-spring-boot-starter</artifactId>
+            <version>${picocli-spring-boot.version}</version>
+        </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
