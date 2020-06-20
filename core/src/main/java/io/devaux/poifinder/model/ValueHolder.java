@@ -5,11 +5,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Very simple bean aiming JSON serialization
+ * Very simple bean aiming for JSON serialization
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class ValueHolder {
-    private Long value;
+    private long value;
 }

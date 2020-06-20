@@ -21,6 +21,22 @@ class ZonePoiFinderTest {
 
         ValueHolder poiNumber = underTest.findPoiIn(zone);
 
-        assertThat(poiNumber).isEqualTo(2);
+        assertThat(poiNumber.getValue()).isEqualTo(2);
+    }
+
+    @Test
+    void shouldFindWithMinAndMax() {
+        // This is an extra test with minimum AND maximum set on the zone to find in
+        // (same as test above : will break with data change)
+        Zone zone = Zone.builder()
+                .minLatitude(6.5)
+                .minLongitude(-7d)
+                .maxLatitude(6.7)
+                .maxLongitude(2d)
+                .build();
+
+        ValueHolder poiNumber = underTest.findPoiIn(zone);
+
+        assertThat(poiNumber.getValue()).isEqualTo(1);
     }
 }
