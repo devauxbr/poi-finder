@@ -57,7 +57,7 @@ Expected output :
 
 Run the Web server with :
 ```bash
-java -jar web/target/poi-finder-cli-0.0.1-SNAPSHOT.jar [CLI parameters]
+java -jar web/target/poi-finder-web-0.0.1-SNAPSHOT.jar
 ```
 
 Wait for the server to start (i.e. until `Started PointFinderWebApplication in X.YZ seconds (JVM running for A.BC)` is
